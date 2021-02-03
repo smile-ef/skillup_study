@@ -1,0 +1,124 @@
+.subscribe-body {
+    background-color: #E5E5E5;
+}
+
+.subscribe-footer {
+    background-color: #2D3651;
+}
+
+$width : 1920;
+.subscribe-body__container {
+    padding : 57px 270px 63px 295px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-column-gap: 80px;
+
+    @media (max-width: 1850px) {
+        padding: (57 * 100% / $width) (270 * 100% / $width) (63 * 100% / $width) (295 * 100% /  $width);
+    }
+
+    @media (max-width: 992px) {
+
+    }
+
+    @media (max-width: 768px) {
+
+    }
+
+    @media (max-width: 576px) {
+
+    }
+}
+
+
+.subscribe-content {
+    padding-top: 40px;
+}
+.subscribe-title {
+    font-family: "Roboto Slab", serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 0.22rem;
+    line-height: 1.23;
+    word-spacing: 0.11rem;
+    margin: 0 0 48px;
+    color:#2D3651;
+}
+.subsribe-txt {
+    letter-spacing: 0.9px;
+    word-spacing: -0.9px;
+    line-height: 1.35;
+    /*font-size: 1.125rem;*/
+    font-size: 14.5px; // временно из-за небольшого экрана
+    p {
+        margin: 0 0 16px;
+    }
+}
+.subscribe-img {
+    position: relative;
+    padding-top: 38px;
+    padding-left: 12px;
+    img {
+        max-width: 271px;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 200px;
+        background-color: #C5C5C5;
+        left: -30px;
+        top: 187px;
+    }
+}
+
+.subscribe-footer__container {
+    padding: 30px 296px;
+}
+.subscribe-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    ::placeholder {
+        font-size: 1.125rem;
+        font-family: "Roboto", sans-serif;
+        color:#ffffff;
+    }
+}
+.subscribe-input {
+    padding: 19px 31px;
+    font-size: 1.125rem;
+    font-family: "Roboto", sans-serif;
+    background-color: #38405A;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+    word-spacing: 1px;
+    border: none;
+    border-bottom: 2px solid #4C546B;
+    &:focus,
+    &:active {
+        background-color: #4C546B;
+        border-bottom-color: #ffffff;
+        outline: none;
+    }
+}
+.subscribe-button {
+    background-color: #424B63;
+    display: block;
+    padding: 18px 20px;
+    font-size: 1.125rem;
+    height: 60px;
+    text-align: center;
+    transition: background-color 0.5s;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+    border: 2px transparent solid;
+    border-bottom-color: #72788A;
+    &:focus,
+    &:hover,
+    &:active {
+        background-color: #D66926;
+        border-color: #ffffff;
+    }
+}
