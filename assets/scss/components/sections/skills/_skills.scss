@@ -1,0 +1,125 @@
+.skills {
+    padding: 10px 10px 40px;
+  
+    @media (max-width: 576px) {
+        padding: 20px;
+        }
+
+    &__container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
+  
+    @media (max-width: 992px) {
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6" "a7 a8 a6" "a7 a9 a9";
+        }
+         
+    @media (max-width: 768px) {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-areas: "a1 a2" "a3 a2" "a4 a4" "a5 a6" "a5 a7" "a8 a9";
+        }
+         
+    @media (max-width: 576px) {
+          grid-template-columns: 1fr;
+          grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9";
+          grid-gap: 20px;
+        }
+}
+
+&__button {
+   @extend %button
+  }
+}
+    
+  .skill-item {
+    min-height: calc(33.333vh - 13.333px);
+    background-color: #2d3651;
+    position: relative;
+    overflow: hidden;
+    
+    &__overlay {
+        background-color: #2d3651;
+        opacity: 0.8;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        -webkit-transition: opacity 0.5s;
+        -o-transition: opacity 0.5s;
+        transition: opacity 0.5s;
+      }
+      
+    &__image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-position: 50% 50%;
+        background-size: cover;
+        -webkit-transition: -webkit-transform 0.5s;
+        transition: -webkit-transform 0.5s;
+        -o-transition: transform 0.5s;
+        transition: transform 0.5s;
+        transition: transform 0.5s, -webkit-transform 0.5s;
+      }
+      
+    &__title {
+        margin: 0;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+      
+    &__link {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        font-size: 1.25rem;
+        letter-spacing: 0.1em;
+        -webkit-transition: color 0.5s;
+        -o-transition: color 0.5s;
+        transition: color 0.5s;
+      } 
+        
+  &:hover .skill-item__overlay {
+    opacity: 0.95 !important;
+  }
+  
+  &:hover .skill-item__image {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  
+  &:hover .skill-item__link {
+    color: #d66926;
+  }
+   
+}
+  
+  @for $i from 1 through 9 {
+        .skill-item:nth-of-type(#{$i}) {
+        grid-area: a#{$i};
+      }
+    }
+ 
+  
+  
+
